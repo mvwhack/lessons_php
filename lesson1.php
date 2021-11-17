@@ -14,13 +14,13 @@ $int = 541967;
 $num1 = substr($int, 0, 2);
 $num2 = substr($int, 2, 2);
 $num3 = substr($int, 4, 2);
-$one = substr($int, 0, 3);
-$two = substr($int, 3, 3);
+
+$one = floor(($int % 1000000) / 1000);
+$two = $int % 1000;
 
 
 $sum = $num1 + $num2 + $num3;
 $mult = $one * $two;
-
 
 echo $sum . "\n";
 echo $mult . "\n";
