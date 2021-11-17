@@ -30,5 +30,6 @@ $text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel temp
 
 $text = mb_strtolower($text);
 $text = str_replace('dolor' , '<i>dolor</i>', $text);
+$text = "<ol><li>" . str_replace('.', ';</li><li>', $text) . "</li></ol>" . "\n";
 
-echo "<ol><li>" . str_replace('. ', ';</li><li>', $text) . "</li></ol>" . "\n";
+echo preg_replace("/<li[^>]*>(?:\s|&nbsp;)*<\/li>/", '', $text);
